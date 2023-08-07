@@ -11,5 +11,9 @@ class Topping(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     topping_name = models.CharField(max_length=100)
 
+    #Don't need this because Toppings is a regular plural, just a template:
+    #class Meta:
+    #    verbose_name_plural = 'toppings'
+
     def __str__(self):
         return self.topping_name
