@@ -9,8 +9,8 @@ from pizzas.models import *
 
 pizzas = Pizza.objects.all()
 
-for pizza in pizzas:
-    print(pizza.id, pizza.pizza_name)
+#for pizza in pizzas:
+    #print(pizza.id, pizza.pizza_name)
 
 p = Pizza.objects.get(id=1)
 print(p.pizza_name)
