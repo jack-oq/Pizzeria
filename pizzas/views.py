@@ -12,6 +12,9 @@ def pizzas(request):
     return render(request, 'pizzas/pizzas.html', context)
 
 def pizza(request,pizza_id):
+    #p = Pizza.objects.get(id=1)
+    #piz = p.pizza_name
+
     pizza = Pizza.objects.get(id=pizza_id)
 
     toppings = Topping.objects.filter(pizza=pizza).order_by('pizza_id')
