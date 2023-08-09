@@ -19,3 +19,8 @@ pizzas = Pizza.objects.filter(pizza_name=p)
 
 for p in pizzas:
     print(p.id, p)
+
+
+#<p>
+#    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a new comment</a>
+#</p>

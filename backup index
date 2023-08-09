@@ -1,0 +1,49 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1 style="color: #FF9800; font-size: 36px; margin-bottom: 20px;">
+            Browse our Pizza options in the Pizzas tab, or take a look at pictures below!
+        </h1>
+    </div>
+{% endblock content %}
+
+
+
+
+BASE:
+
+<p>
+    <a href="{% url 'pizzas:index' %}">Pizzeria</a>
+    <a href="{% url 'pizzas:pizzas' %}">Pizzas</a>
+
+</p>
+
+{% block content %}
+
+{% endblock content %}
+
+
+PIZZAS:
+
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+
+<p>
+    Jack's Pizzeria Availible Pizzas:
+</p>
+
+<ul>
+    {% for pizza in all_pizzas %}
+
+    <li> 
+        <a href="{% url 'pizzas:pizza' pizza.id %}">{{pizza}}</a>
+    </li>
+    {% empty %}
+    <li>No pizzas have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+

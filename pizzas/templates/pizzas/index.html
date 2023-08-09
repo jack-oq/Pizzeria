@@ -1,9 +1,12 @@
 {% extends "pizzas/base.html" %}
 
 {% block content %}
+    <div style="text-align: center;">
+        <h1 style="color: #FF9800; font-size: 36px; margin-bottom: 20px;">
+            Browse our Pizza options in the Pizzas tab, or take a look at our amazing ongoing deals below!
+        </h1>
+    </div>
 
-<p>
-    Welcome to Jack's Pizzeria!
-</p>
+{% load static %} <img src="{% static 'media/coupon.png' %}" alt="Coupon" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); margin: 20px auto; display: block;">
 
 {% endblock content %}

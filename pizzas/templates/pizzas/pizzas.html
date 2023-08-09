@@ -1,20 +1,17 @@
 {% extends "pizzas/base.html" %}
 
 {% block content %}
+    <div class="pizza-list-container">
+        <h1 class="pizza-list-header">Available Pizzas:</h1>
 
-<p>
-    Jack's Pizzeria Availible Pizzas:
-</p>
-
-<ul>
-    {% for pizza in all_pizzas %}
-
-    <li> 
-        <a href="{% url 'pizzas:pizza' pizza.id %}">{{pizza}}</a>
-    </li>
-    {% empty %}
-    <li>No pizzas have been added yet.</li>
-    {% endfor %}
-</ul>
-
+        <ul class="pizza-list">
+            {% for pizza in all_pizzas %}
+                <li class="pizza-item">
+                    <a href="{% url 'pizzas:pizza' pizza.id %}" class="pizza-link">{{ pizza }}</a>
+                </li>
+            {% empty %}
+                <li class="no-pizza">No pizzas have been added yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock content %}

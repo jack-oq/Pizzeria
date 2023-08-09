@@ -3,10 +3,14 @@
 {% block content %}
 
 <p>
-    {{pizzas}} Pizza
+    {{pizzas}} Pizza Details:
 </p>
 
 {% load static %} <img src="{% static "media/Hawaiian.jpg" %}" alt="Hawaiian Pizza" style="width: 200px; height: auto;" />
+
+<p>
+    Toppings on the {{pizzas}} Pizza:
+</p>
 
 <ul>
     {% for topping in toppings %}
@@ -18,5 +22,6 @@
     <li>No toppings have been added for this pizza yet.</li>
     {% endfor %}
 </ul>
+
 
 {% endblock content %}

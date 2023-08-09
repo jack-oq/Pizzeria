@@ -1,0 +1,16 @@
+/* styles.css */
+
+/* Style for the header */
+.header {
+    background-color: #ff2a00;
+    padding: 20px;
+}
+
+/* Style for the header text */
+.header-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Add more styles as needed */
