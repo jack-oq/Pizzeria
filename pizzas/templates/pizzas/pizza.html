@@ -6,8 +6,7 @@
     {{pizzas}} Pizza Details:
 </p>
 
-{% load static %} <img src="{% static "media/Hawaiian.jpg" %}" alt="Hawaiian Pizza" style="width: 200px; height: auto;" />
-
+<img src="{{ pizzas.image.url }}" width = '200'/>
 
 <p>
     Toppings on the {{pizzas}} Pizza:
@@ -15,7 +14,6 @@
 
 <ul>
     {% for topping in toppings %}
-
     <li> 
         <p>{{topping.topping_name}}</p>
     </li>
@@ -24,5 +22,8 @@
     {% endfor %}
 </ul>
 
+<p>
+    <a href="{% url 'pizzas:new_comment' pizzas.id %}">Add a new comment</a>
+</p>
 
 {% endblock content %}
