@@ -47,3 +47,48 @@ PIZZAS:
 
 {% endblock content %}
 
+\
+
+
+{% load static %} <img src="{% static "media/Hawaiian.jpg" %}" alt="Hawaiian Pizza" style="width: 200px; height: auto;" />
+
+
+
+
+
+
+
+
+
+
+PIZZA:
+
+
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+
+<p>
+    {{pizzas}} Pizza Details:
+</p>
+
+{% load static %} <img src="{% static 'media/'|add:pizza.image_name_with_file_extension %}" alt="Hawaiian Pizza" style="width: 200px; height: auto;" />
+
+
+<p>
+    Toppings on the {{pizzas}} Pizza:
+</p>
+
+<ul>
+    {% for topping in toppings %}
+
+    <li> 
+        <p>{{topping.topping_name}}</p>
+    </li>
+    {% empty %}
+    <li>No toppings have been added for this pizza yet.</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Pizza(models.Model):
     pizza_name = models.CharField(max_length=100)
-    #image_name = models.CharField(max_length=100)
+    image_name_with_file_extension = models.CharField(max_length=100, default='')
 
     def __str__(self):
         return self.pizza_name
