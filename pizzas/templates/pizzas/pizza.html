@@ -2,15 +2,11 @@
 
 {% block content %}
 
-<p>
-    {{pizzas}} Pizza Details:
-</p>
+<h2>{{pizzas}} Pizza Details:</h2>
 
 <img src="{{ pizzas.image.url }}" width = '200'/>
 
-<p>
-    Toppings on the {{pizzas}} Pizza:
-</p>
+<h2>Toppings on the {{pizzas}} Pizza:</h2>
 
 <ul>
     {% for topping in toppings %}
@@ -19,6 +15,18 @@
     </li>
     {% empty %}
     <li>No toppings have been added for this pizza yet.</li>
+    {% endfor %}
+</ul>
+
+<h2>Comments</h2>
+<ul>
+    {% for comment in pizzas.comment_set.all %}
+    <li>
+        {{ comment.content }}<br>
+        Posted on {{ comment.time }}
+    </li>
+    {% empty %}
+    <li>No comments yet.</li>
     {% endfor %}
 </ul>
 
